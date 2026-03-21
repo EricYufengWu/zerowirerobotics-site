@@ -1,0 +1,75 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --fg: #111111;
+  --fg-muted: #888888;
+  --bg: #fafafa;
+  --border: #e0e0e0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  background-color: var(--bg);
+  color: var(--fg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 480px;
+  width: 100%;
+}
+
+h1 {
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: var(--fg);
+}
+
+.subtitle {
+  font-size: clamp(0.9rem, 2.5vw, 1.05rem);
+  color: var(--fg-muted);
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+  margin-top: -0.75rem;
+}
+
+.coming-soon {
+  display: inline-block;
+  padding: 0.65rem 1.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  cursor: default;
+  transition: border-color 0.2s ease, color 0.2s ease;
+  outline: none;
+  pointer-events: none;
+}
+
+.coming-soon:not([disabled]):hover {
+  border-color: var(--fg);
+  color: var(--fg);
+}
